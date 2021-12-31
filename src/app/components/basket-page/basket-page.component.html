@@ -1,0 +1,14 @@
+<div class="basket">
+  <p
+    *ngIf="items.length<1 else elseBlock "
+    class="basket-text">Кошик порожній
+      <br>
+     Але це ніколи не пізно виправити :)
+  </p>
+  <ng-template #elseBlock>
+    <div *ngFor="let item of items">
+      <span>{{ item.name }} - {{ item.price }} ₴</span>
+    </div>
+    <p class="basket-sum">До оплати: {{ sumOll }} грн</p>
+  </ng-template>
+</div>
