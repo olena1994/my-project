@@ -1,0 +1,40 @@
+.header {
+    border-bottom: 3px solid black;
+
+    &-title {
+        text-align: center;
+        margin: 30px auto;
+    }
+}
+
+.nav {
+    width: 100vh;
+    margin: 0 auto;
+
+    &-list {
+        display: flex;
+        flex-direction: row;
+        column-gap: 100px;
+        margin: 0 auto;
+    }
+
+    &-li {
+        list-style: none; 
+        border: 1px solid black;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &-link {
+        text-decoration: none;
+    }
+
+    &-img-for-basket {
+        height: 30px;
+        width: 30px;
+    }
+}
