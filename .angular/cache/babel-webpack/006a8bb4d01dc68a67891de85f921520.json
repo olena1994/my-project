@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  apiURL: 'https://mate-academy.github.io/react_phone-catalog/api',\n  imgURL: 'assets/'\n};","map":null,"metadata":{},"sourceType":"module"}
