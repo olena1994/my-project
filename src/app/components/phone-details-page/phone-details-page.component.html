@@ -1,0 +1,74 @@
+<ng-container *ngIf="phone" else #loader class="phone-details-page">
+    <div class="phone-details-page">
+        <h4>{{ phone.name }}</h4>
+        <p>{{ phone.description }}</p>
+        <p>Additional features: 
+            <br>
+            {{ phone.additionalFeatures }}
+        </p>
+
+        <p>Android: 
+            <br>
+            {{ phone.android }}
+        </p>
+
+        <p>Battery: 
+            <br>
+            {{ phone.battery }}
+        </p>
+
+        <p>Camera: 
+            <br>
+            {{ phone.camera }}
+        </p>
+
+        <p>Connectivity: 
+            <br>
+            {{ phone.connectivity}}
+        </p>
+
+        <p>Description: 
+            <br>
+            {{ phone.description }}
+        </p>
+
+        <p>Display: 
+            <br>
+            {{ phone.display }}
+        </p>
+
+        <p>Hardware: 
+            <br>
+            {{ phone.hardware }}
+        </p>
+
+        <p>SizeAndWeight: 
+            <br>
+            {{ phone.sizeAndWeight }}
+        </p>
+
+        <p>Storage:
+            <br>
+            {{ phone.storage }}
+        </p>
+
+        <ul>
+            <li *ngFor="let image of phone.images">
+                <img [src]="getImageURL(image)" [alt]="phone.name">
+            </li>
+        </ul>
+        <button
+          class="phone-details-page__button card-button btn btn-secondary">
+          Назад
+        </button>
+        <a
+              routerLink="phones"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >Телефони</a>
+    </div>
+</ng-container>
+
+<ng-template #loader>
+  <p>loading...</p>
+</ng-template>

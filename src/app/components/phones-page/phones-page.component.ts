@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Phone } from 'src/app/models/phone';
 import { CartService } from 'src/app/cart.service';
@@ -13,13 +12,13 @@ export class PhonesPageComponent implements OnInit {
   phones: Phone[] = [];
 
   constructor(
-    private http: HttpClient,
     private cartService: CartService
     ) {}
 
   ngOnInit(): void { 
-    this.http.get<Phone[]>(`${environment.apiURL}/products.json`)
+    this.cartService.getAll()
     .subscribe(phones => {
+      console.log(phones);
       this.phones = phones;
     })
   }
