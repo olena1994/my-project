@@ -1,0 +1,13 @@
+.phone-details-page {
+    &_ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 70px;
+    }
+
+    &_li {
+        list-style: none;
+        gap: 10px;
+    }
+}

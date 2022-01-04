@@ -13,14 +13,13 @@ export class PhonesPageComponent implements OnInit {
 
   constructor(
     private cartService: CartService
-    ) {}
+  ) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.cartService.getAll()
-    .subscribe(phones => {
-      console.log(phones);
-      this.phones = phones;
-    })
+      .subscribe(phones => {
+        this.phones = phones;
+      })
   }
 
   getImageURL(url: string) {

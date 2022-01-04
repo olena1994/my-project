@@ -41,5 +41,4 @@ export class CartService {
       this.sum = this.sum + item.price;
     }
   }
-
 }

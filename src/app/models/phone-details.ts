@@ -1,5 +1,4 @@
 export interface PhoneDetails {
-    price: any;
     additionalFeatures: string;
     android: string;
     battery: string;
@@ -12,5 +11,6 @@ export interface PhoneDetails {
     images: string[];
     name: string;
     sizeAndWeight: string;
-    storage: string
+    storage: string;
+    price: number;
   }

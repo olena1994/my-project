@@ -1,72 +1,78 @@
 <ng-container *ngIf="phone" else #loader class="phone-details-page">
-    <div class="phone-details-page">
         <h4>{{ phone.name }}</h4>
         <p>{{ phone.description }}</p>
-        <p>Additional features: 
+        <p><strong>Additional features:</strong> 
             <br>
             {{ phone.additionalFeatures }}
         </p>
 
-        <p>Android: 
+        <p><strong>Android:</strong> 
             <br>
-            {{ phone.android }}
+            {{ phone.android | json}}
         </p>
 
-        <p>Battery: 
+        <p><strong>Battery:</strong>
             <br>
-            {{ phone.battery }}
+            {{ phone.battery | json }}
         </p>
 
-        <p>Camera: 
+        <p><strong>Camera:</strong>
             <br>
-            {{ phone.camera }}
+            {{ phone.camera | json }}
         </p>
 
-        <p>Connectivity: 
+        <p><strong>Connectivity:</strong> 
             <br>
-            {{ phone.connectivity}}
+            {{ phone.connectivity | json }}
         </p>
 
-        <p>Description: 
+        <p><strong>Description:</strong> 
             <br>
             {{ phone.description }}
         </p>
 
-        <p>Display: 
+        <p><strong>Display:</strong> 
             <br>
-            {{ phone.display }}
+            {{ phone.display | json }}
         </p>
 
-        <p>Hardware: 
+        <p><strong>Hardware:</strong> 
             <br>
-            {{ phone.hardware }}
+            {{ phone.hardware | json }}
         </p>
 
-        <p>SizeAndWeight: 
+        <p><strong>SizeAndWeight:</strong> 
             <br>
-            {{ phone.sizeAndWeight }}
+            {{ phone.sizeAndWeight | json }}
         </p>
 
-        <p>Storage:
+        <p><strong>Storage:</strong>
             <br>
-            {{ phone.storage }}
+            {{ phone.storage | json }}
         </p>
 
-        <ul>
-            <li *ngFor="let image of phone.images">
+        <p><strong>Price:</strong>
+            <br>
+            {{ phone.price }} ₴
+        </p>
+
+        <ul class="phone-details-page_ul">
+            <li
+              class="phone-details-page_li"
+              *ngFor="let image of phone.images">
                 <img [src]="getImageURL(image)" [alt]="phone.name">
             </li>
         </ul>
         <button
-          class="phone-details-page__button card-button btn btn-secondary">
+          class="phone-details-page__button card-button btn btn-secondary"
+          (click)="back()">
           Назад
         </button>
-        <a
-              routerLink="phones"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >Телефони</a>
-    </div>
+        <button
+          class="phone-details-page__button card-button btn btn-secondary"
+          (click)="addToCart(phone)">
+          Купити
+        </button>
 </ng-container>
 
 <ng-template #loader>
