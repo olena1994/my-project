@@ -1,48 +1,39 @@
 <header class="header">
     <nav class="nav">
         <ul class="nav-list">
-          <li class="nav-li">
             <a
               class="nav-link"
               routerLink=""
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >На початкову сторінку</a>
-          </li>
-          <li class="nav-li">
             <a
               class="nav-link"
               routerLink="phones"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >Телефони</a>
-          </li>
-          <li class="nav-li">
             <a
               class="nav-link"
               routerLink="goods-for-home"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >Для дому</a>
-          </li>
-          <li class="nav-li">
             <a
               class="nav-link"
               routerLink="goods-for-car"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >Для авто</a>
-          </li>
-          <li class="nav-li">
             <a
               class="nav-link"
               routerLink="basket"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >
-            <img class="nav-img-for-basket" src="https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg" alt="">
+            Кошик
+            <div *ngIf="counter>0" class="nav-link__counter">{{ counter }}</div>
             </a>
-        </li>
         </ul>
     </nav>
     <h1 class="header-title">{{ title }}</h1>

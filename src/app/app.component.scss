@@ -18,23 +18,44 @@
         margin: 0 auto;
     }
 
-    &-li {
+    &-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        position: relative;
         list-style: none; 
         border: 1px solid black;
         border-radius: 5px;
+        text-decoration: none;
         transition: transform 0.3s ease;
+
+        @media (max-width:1700px) {
+            height: 70px;
+        }
+
+        &__counter {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+
+            background-color: green;
+            color: white;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
 
         &:hover {
             transform: scale(1.1);
         }
-    }
-
-    &-link {
-        text-decoration: none;
-    }
-
-    &-img-for-basket {
-        height: 30px;
-        width: 30px;
     }
 }

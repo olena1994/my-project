@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from 'src/app/cart.service';
+import { Basket } from '../../models/basket';
 
 @Component({
   selector: 'app-basket-page',
@@ -7,11 +8,17 @@ import { CartService } from 'src/app/cart.service';
   styleUrls: ['./basket-page.component.scss']
 })
 export class BasketPageComponent {
-  sum: any;
   sumOll = this.cartService.sum
   items = this.cartService.getItems();
 
   constructor(
     private cartService: CartService
   ) { }
+
+  remove(item: Basket) {
+    this.cartService.removeFromBasket(item);
+    this.items = this.cartService.getItems();
+    this.sumOll = this.cartService.sum
+  }
 }
+

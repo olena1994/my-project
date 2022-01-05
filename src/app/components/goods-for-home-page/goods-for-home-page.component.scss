@@ -5,7 +5,10 @@
     align-items: center;
     
     &-card {
-        display: flex
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 70px;
     }
 
     &-title {
