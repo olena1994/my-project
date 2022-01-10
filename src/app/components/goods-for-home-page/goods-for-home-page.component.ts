@@ -18,7 +18,7 @@ export class GoodsForHomePageComponent {
     id: 2,
     url: 'https://content1.rozetka.com.ua/goods/images/big_tile/243687720.jpg',
     name: 'Пральна машина',
-    description:'Пральна машина Samsung WW80R42LHFWDUA',
+    description: 'Пральна машина Samsung WW80R42LHFWDUA',
     price: 12999
   }, {
     id: 3,
@@ -26,11 +26,11 @@ export class GoodsForHomePageComponent {
     name: 'Посудомийна машина',
     description: 'Посудомийна машина BOSCH SMV25EX00E',
     price: 7699
-  },{
+  }, {
     id: 4,
     url: 'https://content.rozetka.com.ua/goods/images/big_tile/238350540.jpg',
     name: 'Морозильна камера',
-    description:'Морозильна камера Gorenje FN6192CW',
+    description: 'Морозильна камера Gorenje FN6192CW',
     price: 12159
   }, {
     id: 5,
@@ -39,11 +39,12 @@ export class GoodsForHomePageComponent {
     description: 'Сушильний автомат SAMSUNG DV90T5240AT/UA',
     price: 21399
   }
-  ]
+  ];
 
   constructor(
     private cartService: CartService
-  ) { }
+  ) {
+  }
 
   addToCart(product: Good) {
     this.cartService.addToCart(product);

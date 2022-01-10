@@ -8,17 +8,13 @@ import { CartService } from './cart.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Онлайн магазин "Твій улюблений"';
   counter!: number;
-  subject!: Subject<number>
 
   constructor(
     private cartService: CartService
-  ) { 
-    this.cartService.subject.subscribe ({
-      next: (count: number) => {
-        this.counter = count;
-      }
+  ) {
+    this.cartService.subject.subscribe((count: number) => {
+      this.counter = count;
     });
   }
 }

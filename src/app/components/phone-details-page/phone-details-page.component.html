@@ -1,78 +1,78 @@
 <ng-container *ngIf="phone" else #loader class="phone-details-page">
-        <h4>{{ phone.name }}</h4>
-        <p>{{ phone.description }}</p>
-        <p><strong>Additional features:</strong> 
-            <br>
-            {{ phone.additionalFeatures }}
-        </p>
+  <h4>{{ phone.name }}</h4>
+  <p>{{ phone.description }}</p>
+  <p><strong>Additional features:</strong>
+    <br>
+    {{ phone.additionalFeatures }}
+  </p>
 
-        <p><strong>Android:</strong> 
-            <br>
-            {{ phone.android | json}}
-        </p>
+  <p><strong>Android:</strong>
+    <br>
+    {{ phone.android | json}}
+  </p>
 
-        <p><strong>Battery:</strong>
-            <br>
-            {{ phone.battery | json }}
-        </p>
+  <p><strong>Battery:</strong>
+    <br>
+    {{ phone.battery | json }}
+  </p>
 
-        <p><strong>Camera:</strong>
-            <br>
-            {{ phone.camera | json }}
-        </p>
+  <p><strong>Camera:</strong>
+    <br>
+    {{ phone.camera | json }}
+  </p>
 
-        <p><strong>Connectivity:</strong> 
-            <br>
-            {{ phone.connectivity | json }}
-        </p>
+  <p><strong>Connectivity:</strong>
+    <br>
+    {{ phone.connectivity | json }}
+  </p>
 
-        <p><strong>Description:</strong> 
-            <br>
-            {{ phone.description }}
-        </p>
+  <p><strong>Description:</strong>
+    <br>
+    {{ phone.description }}
+  </p>
 
-        <p><strong>Display:</strong> 
-            <br>
-            {{ phone.display | json }}
-        </p>
+  <p><strong>Display:</strong>
+    <br>
+    {{ phone.display | json }}
+  </p>
 
-        <p><strong>Hardware:</strong> 
-            <br>
-            {{ phone.hardware | json }}
-        </p>
+  <p><strong>Hardware:</strong>
+    <br>
+    {{ phone.hardware | json }}
+  </p>
 
-        <p><strong>SizeAndWeight:</strong> 
-            <br>
-            {{ phone.sizeAndWeight | json }}
-        </p>
+  <p><strong>SizeAndWeight:</strong>
+    <br>
+    {{ phone.sizeAndWeight | json }}
+  </p>
 
-        <p><strong>Storage:</strong>
-            <br>
-            {{ phone.storage | json }}
-        </p>
+  <p><strong>Storage:</strong>
+    <br>
+    {{ phone.storage | json }}
+  </p>
 
-        <p><strong>Price:</strong>
-            <br>
-            {{ phone.price }} ₴
-        </p>
+  <p><strong>Price:</strong>
+    <br>
+    {{ phone.price }} ₴
+  </p>
 
-        <ul class="phone-details-page_ul">
-            <li
-              class="phone-details-page_li"
-              *ngFor="let image of phone.images">
-                <img [src]="getImageURL(image)" [alt]="phone.name">
-            </li>
-        </ul>
-        <button
-          class="phone-details-page__button card-button btn btn-secondary"
-          (click)="back()">
-          Назад
-        </button>
-        <button
-          class="phone-details-page__button card-button btn btn-secondary"
-          (click)="addToCart(phone)">
-          Купити
-        </button>
+  <ul class="phone-details-page_ul">
+    <li
+      class="phone-details-page_li"
+      *ngFor="let image of phone.images">
+      <img [src]="getImageURL(image)" [alt]="phone.name">
+    </li>
+  </ul>
+  <button
+    class="phone-details-page__button card-button btn btn-secondary"
+    (click)="back()">
+    Назад
+  </button>
+  <button
+    class="phone-details-page__button card-button btn btn-secondary"
+    (click)="addToCart(phone)">
+    Купити
+  </button>
 </ng-container>
 
 <ng-template #loader>

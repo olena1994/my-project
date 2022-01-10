@@ -1,14 +1,17 @@
 <div class="basket">
   <p
-    *ngIf="items.length<1 else elseBlock "
-    class="basket-text">Кошик порожній
-      <br>
-     Але це ніколи не пізно виправити :)
+    *ngIf="items.length < 1 else elseBlock"
+    class="basket-text">
+    Кошик порожній
+    <br>
+    Але це ніколи не пізно виправити :)
   </p>
   <ng-template #elseBlock class="basket-list">
     <div class="basket-item" *ngFor="let item of items">
       <span class="basket-name">{{ item.name }} - {{ item.price }} ₴</span>
-        <button class="basket-button btn btn-secondary" (click)="remove(item)">Видалити</button>
+      <button class="basket-button btn btn-secondary" (click)="remove(item)">
+        Видалити
+      </button>
     </div>
     <p class="basket-sum">До оплати: {{ sumOll }} грн</p>
   </ng-template>

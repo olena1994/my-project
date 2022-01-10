@@ -1,28 +1,32 @@
+:host {
+  display: block;
+}
+
 .basket {
-    &-text {
-        margin: 100px auto;
-        text-align: center;
-    }
+  &-text {
+    margin: 100px auto;
+    text-align: center;
+  }
 
-    &-sum {
-        border-top: 1px solid #000;
-    }
+  &-sum {
+    border-top: 1px solid #000;
+  }
 
-    &-item {
-        margin: 0 100px;
-        border-bottom: 1px solid black;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-    }
+  &-item {
+    margin: 0 100px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
 
-    &-button {
-        margin: 5px;
-    }
+  &-button {
+    margin: 5px;
+  }
 
-    &-sum {
-        align-items: center;
-        text-align: center;
-    }
+  &-sum {
+    align-items: center;
+    text-align: center;
+  }
 }

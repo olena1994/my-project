@@ -21,7 +21,8 @@ export class PhoneDetailsPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private cartService: CartService,
     private location: Location,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -43,7 +44,7 @@ export class PhoneDetailsPageComponent implements OnInit {
   }
 
   getImageURL(url: string) {
-    return `${environment.imgURL}${url}`
+    return `${environment.imgURL}${url}`;
   }
 
   addToCart(phone: PhoneDetails) {

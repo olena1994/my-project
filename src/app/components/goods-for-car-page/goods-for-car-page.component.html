@@ -1,7 +1,7 @@
 <div class="conteiner">
-    <h4 class="conteiner-title">Товари для авто</h4>
+  <h4 class="conteiner-title">Товари для авто</h4>
   <div class="conteiner-card">
-  <div *ngFor="let good of goods" class="card">
+    <div *ngFor="let good of goods" class="card">
       <h6 class="card-name">{{ good.name }}</h6>
       <img
         [src]="good.url"
@@ -11,8 +11,9 @@
       <p class="card-price">Ціна: {{ good.price }} ₴</p>
       <button
         class="card-button btn btn-secondary"
-        (click)="addToCart(good)"
-      >Купити</button>
+        (click)="addToCart(good)">
+        Купити
+      </button>
+    </div>
   </div>
-  </div>
-  </div>
+</div>

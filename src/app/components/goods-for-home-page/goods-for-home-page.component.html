@@ -1,18 +1,19 @@
 <div class="conteiner">
   <h4 class="conteiner-title">Товари для дому</h4>
-<div class="conteiner-card">
-<div *ngFor="let good of goods" class="card">
-    <h6 class="card-name">{{ good.name }}</h6>
-    <img
-      [src]="good.url"
-      [alt]="good.name"
-      class="card-img">
-    <p class="card-description">{{ good.description }}</p>
-    <p class="card-price">Ціна: {{ good.price }} ₴</p>
-    <button
-      class="card-button btn btn-secondary"
-      (click)="addToCart(good)"
-    >Купити</button>
-</div>
-</div>
+  <div class="conteiner-card">
+    <div *ngFor="let good of goods" class="card">
+      <h6 class="card-name">{{ good.name }}</h6>
+      <img
+        [src]="good.url"
+        [alt]="good.name"
+        class="card-img">
+      <p class="card-description">{{ good.description }}</p>
+      <p class="card-price">Ціна: {{ good.price }} ₴</p>
+      <button
+        class="card-button btn btn-secondary"
+        (click)="addToCart(good)"
+      >Купити
+      </button>
+    </div>
+  </div>
 </div>

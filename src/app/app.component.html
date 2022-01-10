@@ -1,41 +1,44 @@
 <header class="header">
-    <nav class="nav">
-        <ul class="nav-list">
-            <a
-              class="nav-link"
-              routerLink=""
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >На початкову сторінку</a>
-            <a
-              class="nav-link"
-              routerLink="phones"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >Телефони</a>
-            <a
-              class="nav-link"
-              routerLink="goods-for-home"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >Для дому</a>
-            <a
-              class="nav-link"
-              routerLink="goods-for-car"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >Для авто</a>
-            <a
-              class="nav-link"
-              routerLink="basket"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >
-            Кошик
-            <div *ngIf="counter>0" class="nav-link__counter">{{ counter }}</div>
-            </a>
-        </ul>
-    </nav>
-    <h1 class="header-title">{{ title }}</h1>
+  <nav class="nav">
+    <ul class="nav-list">
+      <a
+        class="nav-link"
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        На початкову сторінку
+      </a>
+      <a
+        class="nav-link"
+        routerLink="phones"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Телефони
+      </a>
+      <a
+        class="nav-link"
+        routerLink="goods-for-home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Для дому
+      </a>
+      <a
+        class="nav-link"
+        routerLink="goods-for-car"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Для авто
+      </a>
+      <a
+        class="nav-link"
+        routerLink="basket"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Кошик
+        <div *ngIf="counter>0" class="nav-link__counter">{{ counter }}</div>
+      </a>
+    </ul>
+  </nav>
+  <h1 class="header-title">Онлайн магазин "Твій улюблений</h1>
 </header>
 <router-outlet></router-outlet>

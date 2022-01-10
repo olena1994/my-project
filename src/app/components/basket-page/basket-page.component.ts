@@ -8,17 +8,19 @@ import { Basket } from '../../models/basket';
   styleUrls: ['./basket-page.component.scss']
 })
 export class BasketPageComponent {
-  sumOll = this.cartService.sum
-  items = this.cartService.getItems();
+  sumOll = this.cartService.sum;
+  items: Basket[] = [];
 
   constructor(
     private cartService: CartService
-  ) { }
+  ) {
+    this.items = this.cartService.getItems();
+  }
 
   remove(item: Basket) {
     this.cartService.removeFromBasket(item);
     this.items = this.cartService.getItems();
-    this.sumOll = this.cartService.sum
+    this.sumOll = this.cartService.sum;
   }
 }
 

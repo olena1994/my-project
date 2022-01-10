@@ -18,7 +18,7 @@ export class GoodsForCarPageComponent {
     id: 2,
     url: 'https://www.avtoradosti.com.ua/pics/prod/ico/61_268147.jpg',
     name: 'Автопилосос',
-    description:'Автопилосос Voin vc-330 миючий/138W/сумка',
+    description: 'Автопилосос Voin vc-330 миючий/138W/сумка',
     price: 748
   }, {
     id: 3,
@@ -26,11 +26,11 @@ export class GoodsForCarPageComponent {
     name: 'Спрей',
     description: 'Спрей для зчеплення шин з льодом (500 мл)',
     price: 197
-  },{
+  }, {
     id: 4,
     url: 'https://www.avtoradosti.com.ua/pics/prod/ico/191360_624560.jpg',
     name: 'Чохол',
-    description:'Чохол проти інею для переднього скла "Winter Plus" 85х135см',
+    description: 'Чохол проти інею для переднього скла "Winter Plus" 85х135см',
     price: 289
   }, {
     id: 5,
@@ -39,11 +39,12 @@ export class GoodsForCarPageComponent {
     description: 'Органайзер трансформер в багажник',
     price: 2250
   }
-  ]
+  ];
 
   constructor(
     private cartService: CartService
-  ) { }
+  ) {
+  }
 
   addToCart(product: Good) {
     this.cartService.addToCart(product);
