@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Subject } from 'rxjs';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Онлайн магазин "Твій улюблений"';
+  counter!: number;
+
+  constructor(
+    private cartService: CartService
+  ) {
+    this.cartService.subject.subscribe((count: number) => {
+      this.counter = count;
+    });
+  }
 }

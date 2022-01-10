@@ -16,14 +16,13 @@ export class PhonesPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.cartService.getAll()
-      .subscribe(phones => {
-        this.phones = phones;
-      })
+    this.cartService.getAll().subscribe(phones => {
+      this.phones = phones;
+    });
   }
 
   getImageURL(url: string) {
-    return `${environment.imgURL}${url}`
+    return `${environment.imgURL}${url}`;
   }
 
   addToCart(product: Phone) {

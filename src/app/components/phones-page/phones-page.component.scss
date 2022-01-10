@@ -1,56 +1,59 @@
-.conteiner {
+:host {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-title {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &-card {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &-title {
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    &-card {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-left: 70px;
-    }
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 70px;
+  }
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: center;
-    width: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  width: 300px;
+  margin: 20px;
+  background: rgb(236, 236, 236);
+  transition: transform 0.3s ease;
 
-    margin: 20px;
-    background: rgb(236, 236, 236);
-    transition: transform 0.3s ease;
+  &-name {
+    margin: 10px;
+  }
 
-    &-name {
-        margin: 10px;
-    }
+  &-img {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+  }
 
-    &-img {
-        margin: 0 auto;
-        width: 200px;
-        height: 200px;
-    }
+  &-description,
+  &-price {
+    margin: 5px;
+  }
 
-    &-description,
-    &-price {
-        margin: 5px;
-    }
+  &-button {
+    margin: 5px auto;
+    width: 150px;
+  }
 
-    &-button {
-        margin: 5px auto;
-        width: 150px;
-    }
-
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-        color: black;
-      }
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: black;
+  }
 }

@@ -1,4 +1,4 @@
 export interface Basket {
-    name: string
-    price: number
+  name: string;
+  price: number;
 }

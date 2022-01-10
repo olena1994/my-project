@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Basket } from './models/basket';
 import { Phone } from './models/phone';
@@ -10,35 +11,38 @@ import { PhoneDetails } from './models/phone-details';
 })
 export class CartService {
   items: Basket[] = [];
-  sum: number = 0;
+  sum!: any;
+  subject = new Subject<number>();
 
-  constructor(private http: HttpClient) {}
-
-  getAll() {
-    return this.http.get<Phone[]>(`${environment.apiURL}/products.json`)
+  constructor(private http: HttpClient) {
   }
 
-  getById(phoneId: string) {
-    return this.http.get<PhoneDetails>(`${environment.apiURL}/products/${phoneId}.json`)
+  getAll(): Observable<Phone[]> {
+    return this.http.get<Phone[]>(`${environment.apiURL}/products.json`);
   }
 
-  addToCart(product: Basket) {
+  getById(phoneId: string): Observable<PhoneDetails> {
+    return this.http.get<PhoneDetails>(`${environment.apiURL}/products/${phoneId}.json`);
+  }
+
+  addToCart(product: Basket): void {
     this.items.push(product);
-    this.toСountOllSum(this.items)
+    this.toCountAllSum(this.items);
+    this.subject.next(this.items.length);
   }
 
-  getItems() {
+  getItems(): Basket[] {
     return this.items;
   }
 
-  clearCart() {
-    this.items = [];
-    return this.items;
+  toCountAllSum(items: Basket[]): void {
+    this.sum = items.reduce(( prev: number, { price }) => prev + price, 0);
   }
 
-  toСountOllSum(items: Basket[]) {
-    for (const item of items) {
-      this.sum = this.sum + item.price;
-    }
+  removeFromBasket(item: Basket): void {
+    this.items = this.items.filter((i: Basket) => i.name !== item.name);
+    this.toCountAllSum(this.items);
+    this.subject.next(this.items.length);
   }
 }
+

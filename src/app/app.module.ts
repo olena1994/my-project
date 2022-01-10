@@ -30,4 +30,5 @@ import { PhoneDetailsPageComponent } from './components/phone-details-page/phone
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { } 
+export class AppModule {
+}

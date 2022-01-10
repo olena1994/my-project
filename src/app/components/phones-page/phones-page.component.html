@@ -1,17 +1,17 @@
-<div class="conteiner">
-    <h4 class="conteiner-title">Телефони</h4>
-  <div class="conteiner-card">
-  <div *ngFor="let phone of phones" class="card">
-    <h6 class="card-name">{{ phone.name }}</h6>
-    <img class="card-img" [src]="getImageURL(phone.imageUrl)" [alt]="phone.name">
+<div class="container">
+  <h4 class="container-title">Телефони</h4>
+  <div class="container-card">
+    <div *ngFor="let phone of phones" class="card">
+      <h6 class="card-name">{{ phone.name }}</h6>
+      <img class="card-img" [src]="getImageURL(phone.imageUrl)" [alt]="phone.name">
       <p class="card-description">{{ phone.snippet }}</p>
       <a [routerLink]="phone.id">Детально</a>
       <p class="card-price">Ціна: {{ phone.price }} ₴</p>
       <button
         class="card-button btn btn-secondary"
         (click)="addToCart(phone)"
-      >Купити</button>
+      >Купити
+      </button>
+    </div>
   </div>
-  </div>
-  </div>
- 
+</div>
