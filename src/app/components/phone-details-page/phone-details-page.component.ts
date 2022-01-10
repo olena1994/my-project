@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef,Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/cart.service';
 import { PhoneDetails } from 'src/app/models/phone-details';
@@ -10,7 +10,8 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-phone-details-page',
   templateUrl: './phone-details-page.component.html',
-  styleUrls: ['./phone-details-page.component.scss']
+  styleUrls: ['./phone-details-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PhoneDetailsPageComponent implements OnInit {
   phones: Phone[] = [];
@@ -21,8 +22,8 @@ export class PhoneDetailsPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private cartService: CartService,
     private location: Location,
-  ) {
-  }
+    private cd: ChangeDetectorRef,
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -37,9 +38,8 @@ export class PhoneDetailsPageComponent implements OnInit {
           this.phones = phones;
           this.priceFromPhones = phones.find(item => item.id === this.phone.id);
           this.phone.price = this.priceFromPhones.price;
-
-          console.log(this.phone.price);
         });
+        this.cd.markForCheck();
       });
   }
 

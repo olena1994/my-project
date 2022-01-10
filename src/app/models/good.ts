@@ -1,5 +1,5 @@
 export interface Good {
-  [x: string]: any;
+  [key: string]: any;
   id: number;
   url: string;
   name: string;

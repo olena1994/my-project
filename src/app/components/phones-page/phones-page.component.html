@@ -1,6 +1,6 @@
-<div class="conteiner">
-  <h4 class="conteiner-title">Телефони</h4>
-  <div class="conteiner-card">
+<div class="container">
+  <h4 class="container-title">Телефони</h4>
+  <div class="container-card">
     <div *ngFor="let phone of phones" class="card">
       <h6 class="card-name">{{ phone.name }}</h6>
       <img class="card-img" [src]="getImageURL(phone.imageUrl)" [alt]="phone.name">

@@ -11,7 +11,7 @@ import { PhoneDetails } from './models/phone-details';
 })
 export class CartService {
   items: Basket[] = [];
-  sum!: number;
+  sum!: any;
   subject = new Subject<number>();
 
   constructor(private http: HttpClient) {
@@ -27,7 +27,7 @@ export class CartService {
 
   addToCart(product: Basket): void {
     this.items.push(product);
-    this.toСountOllSum(this.items);
+    this.toCountAllSum(this.items);
     this.subject.next(this.items.length);
   }
 
@@ -35,17 +35,13 @@ export class CartService {
     return this.items;
   }
 
-  toСountOllSum(items: Basket[]): void {
-    // reduce
-    this.sum = 0;
-    for (const item of items) {
-      this.sum = this.sum + item.price;
-    }
+  toCountAllSum(items: Basket[]): void {
+    this.sum = items.reduce(( prev: number, { price }) => prev + price, 0);
   }
 
   removeFromBasket(item: Basket): void {
     this.items = this.items.filter((i: Basket) => i.name !== item.name);
-    this.toСountOllSum(this.items);
+    this.toCountAllSum(this.items);
     this.subject.next(this.items.length);
   }
 }
