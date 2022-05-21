@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
+import { filter, Subject } from 'rxjs';
 import { CartService } from './cart.service';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,18 @@ import { CartService } from './cart.service';
 })
 export class AppComponent {
   counter!: number;
+  previousUrl?: any;
+  currentUrl?: any;
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) {
     this.cartService.subject.subscribe((count: number) => {
       this.counter = count;
     });
+  }
+
+  ngOnInit() {
   }
 }
